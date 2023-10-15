@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { TweetsCardList } from '../components/TweetsCardList/TweetsCardList';
 import { Button } from '../components/Button/Button';
 import { Wrapper, Text, Loader } from './Tweets.styled';
-import { ToastContainer, Zoom, toast } from 'react-toastify';
+import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { ColorRing } from 'react-loader-spinner';
 import { loadUsers } from 'api/api';

@@ -6,7 +6,7 @@ import backimage from './picture2 1.png';
 import logoimage from './Logo.png';
 import ellipseimage from './Ellipse.png';
 import rectimage from './Rectangle.png';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const CardTweet = ({id, tweets, followers, avatar}) => {
  const [follower, setFollower] = useState(Number(followers));

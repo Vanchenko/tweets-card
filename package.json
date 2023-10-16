@@ -2,7 +2,7 @@
   "name": "followers-card",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://vanchenko.github.io/tweetscard/",
+  "homepage": "http://vanchenko.github.io/tweetscard/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

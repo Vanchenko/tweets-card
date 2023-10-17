@@ -8,20 +8,20 @@ import ellipseimage from './Ellipse.png';
 import rectimage from './Rectangle.png';
 import { useState } from "react";
 
-export const CardTweet = ({id, tweets, followers, avatar}) => {
+export const CardTweet = ({id, tweets, followers, status, avatar}) => {
  const [follower, setFollower] = useState(Number(followers));
- const [isFollow, setIsFollow] = useState(false);
+ const [isFollow, setIsFollow] = useState(status);
 
 const handleOnFollow = (evt) => {
       if (isFollow) {
         setIsFollow(false);
         setFollower(follower - 1);
-        updateFollowers(id,follower);
+        updateFollowers(id, follower - 1, false);
         return;
       }
       setFollower(follower + 1);
       setIsFollow(true);
-      updateFollowers(id,follower);
+      updateFollowers(id, follower + 1, true);
     };
     return(
         <WrapperCard>
@@ -32,7 +32,7 @@ const handleOnFollow = (evt) => {
             <RectImage src={rectimage} alt="" />
             <WrapperText>
                 <Text>{tweets} TWEETS</Text>
-                <Text>{followers} FOLLOWERS</Text>
+                <Text>{follower.toLocaleString('es-US')} FOLLOWERS</Text>
             </WrapperText>
             <Button onClick={handleOnFollow} isFollow={isFollow}>
           {isFollow ? "FOLLOWING" : "FOLLOW"}

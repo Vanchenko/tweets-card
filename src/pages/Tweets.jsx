@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { TweetsCardList } from '../components/TweetsCardList/TweetsCardList';
 import { Button } from '../components/Button/Button';
-import { Wrapper } from './Tweets.styled';
+import { Wrapper, WrapperHeader } from './Tweets.styled';
 import { loadUsers } from 'api/api';
 import { BackLink } from "../components/Backlink/Backlink";
 
@@ -34,15 +34,17 @@ const Tweets = () => {
 
   return (
     <Wrapper>
-      <BackLink to={backLinkHref}>GO BACK</BackLink>
-      <label>
-          Pick your filter:
-          <select value={filter} onChange={handleChange}>
-            <option value="all">Show all</option>
-            <option value="followings">Show following</option>
-            <option value="follow">Show follow</option>
-          </select>
-        </label>
+      <WrapperHeader>
+        <BackLink to={backLinkHref}>GO BACK</BackLink>
+        <label>
+            Pick your filter:
+            <select value={filter} onChange={handleChange}>
+              <option value="all">Show all</option>
+              <option value="followings">Show following</option>
+              <option value="follow">Show follow</option>
+            </select>
+          </label>
+      </WrapperHeader>
       {dataTweets.length > 0 && <TweetsCardList tweetslist={dataTweets} />}
       <Button onLoadMore={onLoadMore} />
     </Wrapper>

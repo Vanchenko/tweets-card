@@ -12,7 +12,9 @@ export const Text = styled.p`
     margin - right: auto;
 `;
 
-export const Loader = styled.div`
+export const WrapperHeader = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
